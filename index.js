@@ -2,6 +2,7 @@ const authentication = require('./authentication');
 const middleware = require('./middleware');
 const listFiles = require('./triggers/list_files');
 const createFile = require('./creates/create_file');
+const addMetadata = require('./creates/add_metadata');
 const deleteFile = require('./creates/delete_file');
 
 
@@ -26,6 +27,7 @@ const App = {
 
   creates: {
     [createFile.key]: createFile,
+    [addMetadata.key]: addMetadata,
     [deleteFile.key]: deleteFile,
   },
 };
