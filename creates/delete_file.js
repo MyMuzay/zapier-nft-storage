@@ -20,22 +20,23 @@ module.exports = {
   operation: {
     perform,
     inputFields: [
-        {
-          key: 'fileCid',
-          label: 'File',
-          dynamic: 'list_files.id.pin__name',
-          required: true,
-          helpText: 'Current list of stored files on your account.',
-        },
-        {
-            key: 'copy',
-            type: 'copy',
-            label: 'copy',
-            helpText: 'Stop storing the content with the passed CID on nft.storage. This does not remove the content from the network, such as any established Filecoin deals or other IPFS nodes in the network that have already pinned this file.',
-        },
-      ],
-    sample: {
-        ok: true
+      {
+        key: 'fileCid',
+        label: 'File',
+        dynamic: 'new_file.id.pin__name',
+        required: true,
+        helpText: 'Current list of stored files on your account.',
       },
+      {
+        key: 'copy',
+        type: 'copy',
+        label: 'copy',
+        helpText:
+          'This will stop storing the content with the passed CID on nft.storage. This does not remove the content from the network, such as any established Filecoin deals or other IPFS nodes in the network that have already pinned this file.',
+      },
+    ],
+    sample: {
+      ok: true,
+    },
   },
 };

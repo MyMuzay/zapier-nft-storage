@@ -17,8 +17,6 @@
   },
   "dependencies": {
     "form-data": "^3.0.0",
-    "nft.storage": "^0.3.8",
-    "node-fetch": "^2.6.1",
     "request": "^2.88.2",
     "zapier-platform-core": "10.2.0"
   },

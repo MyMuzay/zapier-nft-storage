@@ -1,11 +1,10 @@
 const authentication = require('./authentication');
 const middleware = require('./middleware');
-const listFiles = require('./triggers/list_files');
-const createFile = require('./creates/create_file');
-const addMetadata = require('./creates/add_metadata');
+
+const newFile = require('./triggers/new_file');
+const storeFile = require('./creates/store_file');
+const storeMetadata = require('./creates/store_metadata');
 const deleteFile = require('./creates/delete_file');
-
-
 
 const App = {
   version: require('./package.json').version, // eslint-disable-line global-require
@@ -20,14 +19,14 @@ const App = {
   resources: {},
 
   triggers: {
-    [listFiles.key]: listFiles,
+    [newFile.key]: newFile,
   },
 
   searches: {},
 
   creates: {
-    [createFile.key]: createFile,
-    [addMetadata.key]: addMetadata,
+    [storeFile.key]: storeFile,
+    [storeMetadata.key]: storeMetadata,
     [deleteFile.key]: deleteFile,
   },
 };
